@@ -6,12 +6,12 @@ variable "vpc_cidr" {
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "eu-central-1"
 }
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.29"
+  default     = "1.30"
 }
 variable "addons" {
   description = "Kubernetes addons"
@@ -26,7 +26,7 @@ variable "addons" {
 variable "gitops_addons_org" {
   description = "Git repository org/user contains for addons"
   type        = string
-  default     = "https://github.com/gitops-bridge-dev"
+  default     = "https://github.com/irizzant"
 }
 variable "gitops_addons_repo" {
   description = "Git repository contains for addons"
@@ -53,7 +53,7 @@ variable "gitops_addons_path" {
 variable "gitops_workload_org" {
   description = "Git repository org/user contains for workload"
   type        = string
-  default     = "https://github.com/gitops-bridge-dev"
+  default     = "https://github.com/irizzant"
 }
 variable "gitops_workload_repo" {
   description = "Git repository contains for workload"
@@ -63,7 +63,7 @@ variable "gitops_workload_repo" {
 variable "gitops_workload_revision" {
   description = "Git repository revision/branch/ref for workload"
   type        = string
-  default     = "main"
+  default     = "dev"
 }
 variable "gitops_workload_basepath" {
   description = "Git repository base path for workload"
