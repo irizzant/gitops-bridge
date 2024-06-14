@@ -39,6 +39,7 @@ module "gitops_bridge_bootstrap" {
   cluster = {
     metadata = local.addons_metadata
     addons   = local.addons
+    environment  = local.environment
   }
   apps = local.argocd_apps
 

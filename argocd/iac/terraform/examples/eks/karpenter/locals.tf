@@ -3,6 +3,8 @@ locals {
   name   = "karpenter"
   region = var.region
 
+  environment = var.environment
+
   cluster_version = var.kubernetes_version
 
   vpc_cidr = var.vpc_cidr
@@ -57,7 +59,7 @@ locals {
     enable_keda                            = try(var.addons.enable_keda, false)
     enable_kyverno                         = try(var.addons.enable_kyverno, false)
     enable_kube_prometheus_stack           = try(var.addons.enable_kube_prometheus_stack, false)
-    enable_metrics_server                  = try(var.addons.enable_metrics_server, false)
+    enable_metrics_server                  = try(var.addons.enable_metrics_server, true)
     enable_prometheus_adapter              = try(var.addons.enable_prometheus_adapter, false)
     enable_secrets_store_csi_driver        = try(var.addons.enable_secrets_store_csi_driver, false)
     enable_vpa                             = try(var.addons.enable_vpa, false)

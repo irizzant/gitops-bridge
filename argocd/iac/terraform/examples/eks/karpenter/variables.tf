@@ -20,6 +20,7 @@ variable "addons" {
     enable_aws_load_balancer_controller = true
     enable_aws_ebs_csi_resources        = true # generate gp2 and gp3 storage classes for ebs-csi
     enable_karpenter                    = true
+    enable_metrics_server               = true # metrics server for HPA
   }
 }
 # Addons Git
@@ -74,4 +75,13 @@ variable "gitops_workload_path" {
   description = "Git repository path for workload"
   type        = string
   default     = "karpenter/k8s"
+}
+
+################################################################################
+# Engineering
+################################################################################
+variable "environment" {
+  description = "Environment"
+  type        = string
+  default     = "management"  
 }
