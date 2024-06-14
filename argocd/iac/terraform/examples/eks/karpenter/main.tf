@@ -198,25 +198,25 @@ module "eks" {
 }
 
 # TODO: E' necessario?
-#module "aws-auth-cm" {
-#  source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
-#  version = "~> 20.0"
-#
-#  manage_aws_auth_configmap = true
-#
-#  aws_auth_roles = [
-#    # We need to add in the Karpenter node IAM role for nodes launched by Karpenter
-#    {
-#      rolearn  = module.eks_blueprints_addons.karpenter.node_iam_role_arn
-#      username = "system:node:{{EC2PrivateDNSName}}"
-#      groups = [
-#        "system:bootstrappers",
-#        "system:nodes",
-#      ]
-#    },
-#  ]
-#
-#}
+module "aws-auth-cm" {
+  source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
+  version = "~> 20.0"
+
+  manage_aws_auth_configmap = true
+
+  aws_auth_roles = [
+    # We need to add in the Karpenter node IAM role for nodes launched by Karpenter
+    {
+      rolearn  = module.eks_blueprints_addons.karpenter.node_iam_role_arn
+      username = "system:node:{{EC2PrivateDNSName}}"
+      groups = [
+        "system:bootstrappers",
+        "system:nodes",
+      ]
+    },
+  ]
+
+}
 
 module "ebs_csi_driver_irsa" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
