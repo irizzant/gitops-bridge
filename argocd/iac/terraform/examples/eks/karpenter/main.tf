@@ -140,6 +140,8 @@ module "eks" {
   create_cluster_security_group = false
   create_node_security_group    = false
 
+  enable_cluster_creator_admin_permissions = true
+
   # IAM ASPI requires the cluster to have a role named eks-*
   iam_role_name = "eks-${local.name}-role"
 
