@@ -5,7 +5,8 @@
     "kind@latest",
     "kubectl@latest",
     "kubernetes-helm@latest",
-    "awscli@latest"
+    "awscli@latest",
+    "argocd@latest"
   ],
   "shell": {
     "init_hook": [

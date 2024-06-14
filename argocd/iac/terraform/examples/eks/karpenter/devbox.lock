@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "argocd@latest": {
+      "last_modified": "2024-06-07T15:28:25Z",
+      "resolved": "github:NixOS/nixpkgs/d226935fd75012939397c83f6c385e4d6d832288#argocd",
+      "source": "devbox-search",
+      "version": "2.11.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nzhs3gydac4pwkcggzzlsf0gibdlcdkk-argocd-2.11.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nzhs3gydac4pwkcggzzlsf0gibdlcdkk-argocd-2.11.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/j93a17vz7vac0fpl8zm2bwp9lfx890nw-argocd-2.11.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/j93a17vz7vac0fpl8zm2bwp9lfx890nw-argocd-2.11.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/203j91w1yf1klfzf7kf20535v0vyvvw7-argocd-2.11.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/203j91w1yf1klfzf7kf20535v0vyvvw7-argocd-2.11.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/m7sld5invy2h34c4dm81g8x017xfh1jx-argocd-2.11.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/m7sld5invy2h34c4dm81g8x017xfh1jx-argocd-2.11.3"
+        }
+      }
+    },
     "awscli@latest": {
       "last_modified": "2024-05-22T06:18:38Z",
       "resolved": "github:NixOS/nixpkgs/3f316d2a50699a78afe5e77ca486ad553169061e#awscli",
