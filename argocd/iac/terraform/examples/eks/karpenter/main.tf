@@ -110,11 +110,14 @@ module "eks_blueprints_addons" {
     kube-proxy = {}
   }
 
+  karpenter = {
+    role_name_use_prefix = true
+    role_name = "eks-${module.eks.cluster_name}"
+  }
   karpenter_node = {
     # Use static name so that it matches what is defined in `karpenter.yaml` example manifest
     iam_role_use_name_prefix = false
-    iam_role_name = "eks-${module.eks.cluster_name}-karpenter-controller-role"
-    node_iam_role_name = "eks-${module.eks.cluster_name}-karpenter-node-role"
+    iam_role_name = "eks-${module.eks.cluster_name}-karpenter-node-role"
   }
 
   tags = local.tags
