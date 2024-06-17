@@ -198,7 +198,12 @@ module "eks" {
   })
 }
 
-# TODO: E' necessario?
+/*
+E' necessario aggiungere il ruolo IAM del nodo Karpenter per i nodi avviati da Karpenter
+altrimenti i nodi non saranno in grado di registrarsi correttamente con il cluster.
+Questo avviene perché si sta usando Fargate, con i node group standard questa associazione
+avviene nel modulo eks-blueprints-addons.
+*/
 module "aws-auth-cm" {
   source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
   version = "~> 20.0"
